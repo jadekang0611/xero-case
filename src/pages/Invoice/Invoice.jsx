@@ -77,11 +77,19 @@ const Invoice = () => {
           </div>
         </form>
       </div>
-      <div>
-        <Table listItems={values.listItems} />
-        <div className="submit-btn-container">
-          <button onClick={invoiceSubmitHandler}>Submit invoice</button>
-        </div>
+      <div className="dynamic-content-container">
+        {values.listItems.length === 0 ? (
+          <p className="placeholder-message">
+            There is no transaction item added.
+          </p>
+        ) : (
+          <>
+            <Table listItems={values.listItems} />
+            <div className="submit-btn-container">
+              <button onClick={invoiceSubmitHandler}>Submit invoice</button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

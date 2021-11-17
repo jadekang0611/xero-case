@@ -7,7 +7,9 @@ const Table = (props) => {
     arr.forEach((el) => {
       sum += el.cost * el.quantity;
     });
-    return sum;
+    if (sum > 0) {
+      return sum;
+    }
   }
   return (
     <div className="custom-table-container">
