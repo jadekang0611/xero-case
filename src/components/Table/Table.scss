@@ -1,0 +1,28 @@
+.custom-table-container {
+  padding: 20px 0;
+}
+
+table {
+  width: 100%;
+}
+
+.total-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.total-amount {
+  color: #41536b;
+}
+
+.custom-table-container {
+  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
