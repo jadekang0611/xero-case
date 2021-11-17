@@ -33,8 +33,10 @@ const Table = (props) => {
           })}
         </tbody>
       </table>
-      <div>
-        <h2>Total: ${calculateSum(props.listItems)}</h2>
+      <div className="total-container">
+        <h2 className="total-amount">
+          Total: ${calculateSum(props.listItems)}
+        </h2>
       </div>
     </div>
   );
