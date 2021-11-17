@@ -2,6 +2,13 @@ import React from 'react';
 import './Table.scss';
 
 const Table = (props) => {
+  function calculateSum(arr) {
+    let sum = 0;
+    arr.forEach((el) => {
+      sum += el.cost * el.quantity;
+    });
+    return sum;
+  }
   return (
     <div className="custom-table-container">
       <table>
@@ -24,6 +31,9 @@ const Table = (props) => {
           })}
         </tbody>
       </table>
+      <div>
+        <h2>Total: ${calculateSum(props.listItems)}</h2>
+      </div>
     </div>
   );
 };
