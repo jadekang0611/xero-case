@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Invoice.scss';
+import Table from '../../components/Table';
 
 const Invoice = () => {
   const [values, setValues] = useState({
@@ -9,6 +10,16 @@ const Invoice = () => {
     listItems: [],
   });
 
+  const addItemHandler = (e) => {
+    e.preventDefault();
+    setValues({
+      description: '',
+      quantity: '',
+      cost: '',
+      listItems: [...values.listItems, values],
+    });
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setValues({
@@ -16,11 +27,15 @@ const Invoice = () => {
       [name]: value,
     });
   };
+
+  const invoiceSubmitHandler = () => {
+    console.log(values.listItems);
+  };
   return (
     <div className="invoice-container">
       <h1>Invoizer</h1>
       <div className="add-form-container">
-        <form>
+        <form onSubmit={addItemHandler}>
           <div className="label-input-group">
             <div>
               <label htmlFor="trxDescription">Description</label>
@@ -61,6 +76,12 @@ const Invoice = () => {
             <input type="submit" value="Add item" />
           </div>
         </form>
+      </div>
+      <div>
+        <Table listItems={values.listItems} />
+        <div className="submit-btn-container">
+          <button onClick={invoiceSubmitHandler}>Submit invoice</button>
+        </div>
       </div>
     </div>
   );
