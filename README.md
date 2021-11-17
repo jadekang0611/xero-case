@@ -34,9 +34,9 @@ We look forward to seeing what you come up with!
 
 Tell us what you'd do next if you had more time, and what else you might do to to get the code to a production-grade state.
 
-1. I definitely didn't have enough time to come up with a more DRY logics to make my component and page more scalable.
+1. I definitely didn't have enough time to write more reusable code to make my components and pages more scalable.
 2. If I had more time, I would have had spent more time to think about the overall UI styling such as font-size, color, padding, and margin.
-3. I would have fixed getting the listItems with no value initially when I click Submit Invoice.
+3. I would have fixed getting the listItems with no value initially when I click Submit Invoice. I would have refactored my state array structure.
 4. I would have customized and added error handling messages and logic for input values and submit handlers.
 
 # xero-case
